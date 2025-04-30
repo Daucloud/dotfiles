@@ -1,0 +1,16 @@
+[user]
+	name = Xinyuan Zhang
+	email = 130569532+Daucloud@users.noreply.github.com
+[pull]
+	rebase = true
+[commit]
+	template = /Users/daucloud/Code/Examination-System/commit.template
+[core]
+	excludesfile = /Users/daucloud/.gitignore_global
+[alias]
+	chekcout = checkout
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
