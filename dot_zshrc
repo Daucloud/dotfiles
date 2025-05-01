@@ -111,19 +111,6 @@ alias 'c'='clear'
 alias 'ced'='chezmoi edit'
 alias 'capp'='chezmoi -v apply'
 
-# Enable Chinese
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export PATH="$HOME/.local/bin:$PATH"
-export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH
-export HF_ENDPOINT=https://hf-mirror.com
-export exPATH=/usr/local/texlive/2024/bin/x86_64-linux/latexmk:$PATH
-export PATH=/usr/local/texlive/2024/bin/x86_64-linux/xelatex:$PATH
-export HOMEBREW_AUTO_UPDATE_SECS=2592000
-
-export PATH="/Library/TeX/texbin:$PATH"
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

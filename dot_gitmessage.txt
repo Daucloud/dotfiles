@@ -1,0 +1,42 @@
+
+# --- Git Commit Message Template ---
+#
+# Note: Lines starting with '#' will be ignored.
+#
+# <type>(<scope>): <subject>
+#  │      │         │
+#  │      │         └─> Summary in present tense. Not capitalized. No period at the end. (Max 50 chars)
+#  │      │
+#  │      └─> Optional scope of the change (e.g., api, ui, auth, build, etc.)
+#  │
+#  └─> Type: Which kind of change is this? Choose one:
+#      feat:     A new feature
+#      fix:      A bug fix
+#      docs:     Documentation only changes
+#      style:    Changes that do not affect the meaning of the code (white-space, formatting, etc)
+#      refactor: A code change that neither fixes a bug nor adds a feature
+#      perf:     A code change that improves performance
+#      test:     Adding missing tests or correcting existing tests
+#      build:    Changes that affect the build system or external dependencies (e.g., gulp, npm)
+#      ci:       Changes to our CI configuration files and scripts (e.g., Travis, Circle, GitHub Actions)
+#      chore:    Other changes that don't modify src or test files (e.g., updating dependencies)
+#      revert:   Reverts a previous commit
+#
+# Subject line (mandatory, keep short)
+# Example: feat(api): add user registration endpoint
+# ------------------------------------------------------------------------------
+
+
+# Body (optional, separate from subject with a blank line)
+# - Explain *what* and *why* vs. *how*.
+# - Wrap lines at 72 characters.
+# - Use multiple paragraphs if necessary.
+# ------------------------------------------------------------------------------
+
+
+# Footer (optional, separate from body with a blank line)
+# - Reference issues (e.g., Closes #123, Fixes #456, Refs #789).
+# - Mention BREAKING CHANGES here (or add ! after scope: feat(api)!: ...)
+#   Example: BREAKING CHANGE: The user ID parameter is now required.
+# - Add co-authors if applicable: Co-authored-by: name <name@example.com>
+# ------------------------------------------------------------------------------
