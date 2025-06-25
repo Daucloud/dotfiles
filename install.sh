@@ -1,8 +1,8 @@
 #!/bin/sh
 # chezmoi install script
 # contains code from and inspired by
-# https://github.com/client9/shlib
-# https://github.com/goreleaser/godownloader
+# https://githubfast.com/client9/shlib
+# https://githubfast.com/goreleaser/godownloader
 
 # --- Script Setup ---
 # Exit immediately if a command exits with a non-zero status.
@@ -85,7 +85,7 @@ real_tag() {
     tag="${1}"
     log_debug "checking GitHub for tag ${tag}"
 
-    release_url="https://github.com/twpayne/chezmoi/releases/${tag}"
+    release_url="https://githubfast.com/twpayne/chezmoi/releases/${tag}"
     json="$(http_get "${release_url}" "Accept: application/json")"
 
     if [ -z "${json}" ]; then
