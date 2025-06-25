@@ -736,8 +736,69 @@ class AOSCOS(Base):
             return False
         return True
 
+class UV(Base):
+    mirror_url = 'https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/'
 
-MODULES = [ArchLinux, Homebrew, CTAN, Pypi, Anaconda, Debian, Ubuntu, CentOS, AOSCOS]
+    @staticmethod
+    def config_files():
+        return ('~/.config/uv/uv.toml', '/etc/uv/uv.toml')
+
+    @staticmethod
+    def name():
+        return "uv"
+
+    @staticmethod
+    def is_applicable():
+        # Works both in global mode and local mode
+        return sh('uv --version') is not None
+
+    @staticmethod
+    def is_online():
+        config_files = UV.config_files()
+        for conf_file in config_files:
+            expanded_path = os.path.expanduser(conf_file)
+            if not os.path.exists(expanded_path):
+                continue
+            try:
+                with open(expanded_path, 'r') as f:
+                    content = f.read()
+                    if 'url = "' + UV.mirror_url + '"' in content and 'default = true' in content:
+                        return True
+            except Exception:
+                continue
+        return False
+
+    @staticmethod
+    def up():
+        global is_global
+        config_file = os.path.expanduser(UV.config_files()[1] if is_global else UV.config_files()[0])
+        
+        config_content = '''[[index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
+default = true
+'''
+        
+        if not os.path.isdir(os.path.dirname(config_file)):
+            mkdir_p(os.path.dirname(config_file))
+        
+        with open(config_file, 'w') as f:
+            f.write(config_content)
+        return True
+
+    @staticmethod
+    def down():
+        config_files = UV.config_files()
+        for conf_file in config_files:
+            expanded_path = os.path.expanduser(conf_file)
+            if os.path.exists(expanded_path):
+                try:
+                    os.remove(expanded_path)
+                except Exception:
+                    pass
+        return True
+
+
+MODULES = [ArchLinux, Homebrew, CTAN, Pypi, Anaconda, Debian, Ubuntu, CentOS, AOSCOS, UV]
 
 
 def main():
